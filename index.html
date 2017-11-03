@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>doc</title>
+  <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/docute@3/dist/docute.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <style type="text/css">
+    .header-nav a {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- <script src="https://unpkg.com/docute@3/dist/docute.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  <script>
+    docute.init({
+      tocVisibleDepth: 2,
+      nav: [
+        {title:'首页',path:'/'},
+        {title:'路由',path:'/router'},
+        {title:'控制器',path:'/controller'},
+        {title:'服务层',path:'/service'},
+        {title:'视图层',path:'/view'},
+        {title:'静态文件',path:'/static'},
+        {title:'数据库',path:'/database'},
+        {title:'定时任务',path:'/schedule'},
+        {title:'日志',path:'/logger'},
+        // {title:'工具',path:'/utils'},
+        {title:'API',path:'/api'},
+        {title:'深入',path:'/futher'},
+        {title:'配置',path:'/config'},
+        {title:'FAQ',path:'/FAQ'},
+        {title:'版本更新',path:'/releases'},
+      ]
+    })
+  </script>
+</body>
+</html>
