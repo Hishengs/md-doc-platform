@@ -11,5 +11,14 @@
     "url": "https://gumi@internettest.scm.chinacloudsites.cn:443/internettest.git"
   },
   "author": "Hisheng",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "heysoo": "0.0.4",
+    "nunjucks": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
 }
