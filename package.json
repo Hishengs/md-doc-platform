@@ -1,0 +1,15 @@
+{
+  "name": "bp-code",
+  "version": "1.0.0",
+  "description": "Bitpower Code Open And Share Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gumi@internettest.scm.chinacloudsites.cn:443/internettest.git"
+  },
+  "author": "Hisheng",
+  "license": "MIT"
+}
