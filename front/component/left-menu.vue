@@ -9,6 +9,10 @@
         <Icon type="coffee" size="18"></Icon>
         框架与库
       </MenuItem>
+      <MenuItem name="blog" class="blog">
+        <Icon type="social-wordpress" size="18"></Icon>
+        博客
+      </MenuItem>
     </Menu>
 	</div>
 </template>
