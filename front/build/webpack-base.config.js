@@ -46,7 +46,7 @@ module.exports = {
     path: path.join(baseDir, './dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].[chunkhash:4].piece.js',
-    publicPath: '/dist/',
+    publicPath: '/static/dist/',
   },
   plugins,
   rules,
