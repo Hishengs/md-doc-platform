@@ -1,10 +1,11 @@
+const port = process.env.PORT || 8006;
+
 module.exports = {
   host: '127.0.0.1',
-  port: 8002,
+  port: port,
   view: {
     enabled: true,
     engine: 'nunjucks',
-    // manual: true
   },
   static: {
     enabled: true,
