@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>doc</title>
   <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/docute@3/dist/docute.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
   <style type="text/css">
     .header-nav a {
@@ -16,10 +15,14 @@
 </head>
 <body>
   <div id="app"></div>
-  <!-- <script src="https://unpkg.com/docute@3/dist/docute.js"></script> -->
+  <script>
+    if(window.location.href[window.location.href.length-1] !== '/')
+      window.location.href = window.location.href + '/';
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
   <script>
     docute.init({
+      url: './heysoo',
       tocVisibleDepth: 2,
       nav: [
         {title:'首页',path:'/'},
