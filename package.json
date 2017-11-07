@@ -13,6 +13,7 @@
   "author": "Hisheng",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.2",
     "heysoo": "0.0.4",
     "nunjucks": "^3.0.1"
   },

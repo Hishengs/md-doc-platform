@@ -1,6 +1,13 @@
-// require('babel-core/register')({
-//   ignore: /node_modules\/(?!heysoo)/, // 注意，这里是为了让 babel 编译 Heysoo 的代码
-// });
-// require('babel-core/register');
+var express = require('express');
+var app = express();
 
-require('./boot.js');
+app.get('/', function (req, res) {
+  res.send('Bitpower 代码开放共享平台');
+});
+
+var server = app.listen(80, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
