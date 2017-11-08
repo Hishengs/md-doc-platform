@@ -1,3 +1,3 @@
 cls
 set DEBUG=Heysoo:*,-not_this
-supervisor local.js
+supervisor -w ./app local.js
