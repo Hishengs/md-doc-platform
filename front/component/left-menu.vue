@@ -1,6 +1,6 @@
 <template>
 	<div id="left-menu">
-		<Menu :active-name="menu" width="150px" @on-select="name => { $router.push('/' + name); }">
+		<Menu :active-name="$route.name" width="150px" @on-select="name => { $router.push('/' + name); }">
       <MenuItem name="doc" class="doc">
         <Icon type="ios-folder"></Icon>
         文档中心

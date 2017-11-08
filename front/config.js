@@ -1,4 +1,4 @@
 module.exports = {
 	serverUrl: 'http://code.bitpower.ai',
-	// serverUrl: 'http://localhost:8006',
+	// serverUrl: 'http://localhost:9111',
 };

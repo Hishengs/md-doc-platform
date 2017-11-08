@@ -36,7 +36,7 @@
     methods: {
       onMenuSelect (name){
         if(name === 'site-name'){
-          history.go(0);
+          window.location.href = './';
         }else if(name === 'about'){
           this.showAboutModal = true;
         }

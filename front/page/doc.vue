@@ -1,12 +1,13 @@
 <template>
 	<div id="docs">
-		<div class="action-bar">
-			<Button type="text">如何构建项目文档？</Button>
-			<span class="search">
-				<Input placeholder="输入搜索关键词" style="width: 300px"></Input>
-				<Button type="primary">搜索</Button>
+		<action-bar>
+			<span slot="left">
+				<Button type="text" @click="gotoGuide">如何构建项目文档？</Button>
 			</span>
-		</div>
+			<span slot="right">
+				<Button type="text">创建文档</Button>
+			</span>
+		</action-bar>
 		<div class="docs">
 			<!-- 文档列表 -->
 			<Menu :active-name="selectedDocIndex" width="100px" v-if="docList.length" @on-select="onMenuSelect">
@@ -23,8 +24,14 @@
 </template>
 
 <script>
+	import pageMixin from './common/page.mixin.js';
+	import actionBar from '../component/action-bar.vue';
 	export default {
 		name: 'docs',
+		mixins: [pageMixin],
+		components: {
+			actionBar,
+		},
 		data (){
 			return {
 				selectedDocIndex: 0,
@@ -48,12 +55,12 @@
 				});
 			},
 			onMenuSelect (index){
-				console.log('>>> onMenuSelect', index);
+				// console.log('>>> onMenuSelect', index);
 				this.selectedDocIndex = Number(index) || 0;
 				this.createFrame();
 			},
 			createFrame (){
-				console.log('>>> createFrame', this.docList[this.selectedDocIndex]);
+				// console.log('>>> createFrame', this.docList[this.selectedDocIndex]);
 				if(this.docList[this.selectedDocIndex]){
 					const iframe = document.createElement('iframe');
 					iframe.width = '100%';
@@ -74,22 +81,6 @@
     height: 100%;
     position: relative;
     padding-top: 51px;
-    .action-bar {
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	right: 0;
-      height: 50px;
-      line-height: 50px;
-      border-bottom: 1px solid #dfdfdf;
-      padding-bottom: 5px;
-      .search {
-      	float: right;
-      	.ivu-btn {
-      		margin-left: 5px;
-      	}
-      }
-    }
     .docs {
     	padding-top: 10px;
     	height: 100%;

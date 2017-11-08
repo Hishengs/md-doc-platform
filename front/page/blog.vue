@@ -1,12 +1,13 @@
 <template>
 	<div id="blogs">
-		<div class="action-bar">
-			<Button type="text">如何构建个人博客？</Button>
-			<span class="search">
-				<Input placeholder="输入搜索关键词" style="width: 300px"></Input>
-				<Button type="primary">搜索</Button>
+		<action-bar>
+			<span slot="left">
+				<Button type="text" @click="gotoGuide">如何构建个人博客？</Button>
 			</span>
-		</div>
+			<span slot="right">
+				<Button type="text" @click="showAddBlogModal=true">新建博客</Button>
+			</span>
+		</action-bar>
 		<div class="blogs">
 			<!-- 博客列表 -->
 			<Menu :active-name="selectedBlogIndex" width="100px" v-if="blogList.length" @on-select="onMenuSelect">
@@ -19,16 +20,43 @@
 	    	<!--  -->
 	    </div>
 		</div>
+		<!-- 新建博客 -->
+		<Modal title="新建博客" v-model="showAddBlogModal">
+			<Form>
+				<FormItem label="博客名称">
+					<Input type="text" v-model="newBlog.name" placeholder="博客名称" />
+				</FormItem>
+				<FormItem label="博客密钥">
+					<Input type="password" v-model="newBlog.screctKey" placeholder="博客密钥" />
+				</FormItem>
+				<p>博客密钥用于确定博客拥有者身份。</p>
+			</Form>
+			<div slot="footer">
+				<Button type="primary" @click="addBlog">创建</Button>
+			</div>
+		</Modal>
 	</div>
 </template>
 
 <script>
+	import pageMixin from './common/page.mixin.js';
+	import actionBar from '../component/action-bar.vue';
 	export default {
 		name: 'blogs',
+		mixins: [pageMixin],
+		components: {
+			actionBar,
+		},
 		data (){
 			return {
 				selectedBlogIndex: 0,
 				blogList: [], // 文档列表
+				showCreateGuide: false,
+				showAddBlogModal: false,
+				newBlog: {
+					name: '',
+					screctKey: ''
+				}
 			};
 		},
 		activated (){
@@ -65,6 +93,10 @@
 					docViewer.appendChild(iframe);
 				}
 			},
+			// 新建博客
+			addBlog (){
+				//
+			},
 		},
 	}
 </script>
@@ -74,22 +106,6 @@
     height: 100%;
     position: relative;
     padding-top: 51px;
-    .action-bar {
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	right: 0;
-      height: 50px;
-      line-height: 50px;
-      border-bottom: 1px solid #dfdfdf;
-      padding-bottom: 5px;
-      .search {
-      	float: right;
-      	.ivu-btn {
-      		margin-left: 5px;
-      	}
-      }
-    }
     .blogs {
     	padding-top: 10px;
     	height: 100%;

@@ -18,7 +18,7 @@
 		components: {
 			topMenu,
 			leftMenu,
-		}
+		},
 	}
 </script>
 

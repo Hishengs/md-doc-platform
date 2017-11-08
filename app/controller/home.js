@@ -30,7 +30,7 @@ module.exports = (app) => {
     async getFrameworkList (){
       const fs = require('fs');
       const path = require('path');
-      const frameworks = fs.readdirSync(path.join(process.cwd(), '/app/static/framework-and-library'));
+      const frameworks = fs.readdirSync(path.join(process.cwd(), '/app/static/frameworks'));
       this.ctx.done(frameworks);
     }
 
