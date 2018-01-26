@@ -1,18 +1,18 @@
 <template>
 	<div id="left-menu">
-		<Menu :active-name="$route.name" width="150px" @on-select="name => { $router.push('/' + name); }">
-      <MenuItem name="doc" class="doc">
+		<Menu :active-name="$route.name" width="150px" @on-select="name => { $router.push({name: name}); }">
+      <MenuItem name="docs-index" class="docs-index">
         <Icon type="ios-folder"></Icon>
         文档中心
       </MenuItem>
-      <MenuItem name="framework-and-library" class="framework-and-library">
+      <!-- <MenuItem name="framework-and-library" class="framework-and-library">
         <Icon type="coffee" size="18"></Icon>
         框架与库
       </MenuItem>
       <MenuItem name="blog" class="blog">
         <Icon type="social-wordpress" size="18"></Icon>
         博客
-      </MenuItem>
+      </MenuItem> -->
     </Menu>
 	</div>
 </template>

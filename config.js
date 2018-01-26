@@ -1,7 +1,7 @@
-const port = process.env.PORT || 9111;
+const port = process.env.PORT || 8012;
 
 module.exports = {
-  host: '127.0.0.1',
+  host: 'localhost',
   port: port,
   view: {
     enabled: true,

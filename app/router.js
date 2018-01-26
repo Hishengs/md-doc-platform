@@ -1,15 +1,9 @@
 module.exports = app => {
-	app.router.get('/', 'home.index');
+  app.router.get('/', 'home.index');
+  app.router.get('/manage', 'home.manage');
 
-	app.router.get('/manage', 'home.manage');
-
-	app.router.post('/doc/list', 'home.getDocList');
-
-	app.router.post('/blog/list', 'home.getBlogList');
-
-	app.router.post('/framework/list', 'home.getFrameworkList');
-
-	app.router.get(/^docs\/?.*/, async function(){
-		this.ctx.redirect('/static/docs');
-	});
+  app.router.get('/docs', 'doc.getDocs');                       // 获取所有文档
+  app.router.put('/docs', 'doc.create');                        // 创建文档
+  app.router.post('/docs', 'doc.updateDoc');                    // 更新文档
+  app.router.post('/docs/git-sync', 'doc.updateDocFromGit');    // 从 git 更新文档
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "build-prod": "webpack --progress --hide-modules --colors --config=build/webpack-prod.config.js",
     "build-dev": "webpack --progress --hide-modules --colors --config=build/webpack-dev.config.js",
-    "dev": "webpack-dev-server --inline --hot --colors --config=build/webpack-dev.config.js --port 911"
+    "dev": "webpack-dev-server --inline --hot --colors --config=build/webpack-dev.config.js --port 8011"
   },
   "author": "Hisheng",
   "license": "MIT",
@@ -19,16 +19,17 @@
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-    "iview": "^2.6.0",
+    "iview": "^2.8.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "lodash": "^4.17.4",
+    "moment": "^2.20.1",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "vue": "^2.5.3",
+    "vue": "^2.5.13",
     "vue-loader": "^13.4.0",
     "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.5.3",
+    "vue-template-compiler": "^2.5.13",
     "vuex": "^3.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"

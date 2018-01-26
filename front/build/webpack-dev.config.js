@@ -40,7 +40,7 @@ module.exports = {
     inline: true,
     proxy: {
       '/api/*': {
-        target: 'http://localhost:88',
+        target: 'http://localhost:8012',
         secure: false
       }
     }

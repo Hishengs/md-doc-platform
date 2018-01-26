@@ -23,6 +23,7 @@
 </script>
 
 <style lang= "less">
+  @import url(../style/index.less);
 	html, body {
 		height: 100%;
 	}
