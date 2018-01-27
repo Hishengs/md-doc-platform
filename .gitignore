@@ -2,3 +2,5 @@
 /config.js
 /front/node_modules
 /front/dist
+/app/static/dist
+/app/static/docs/docs.json
