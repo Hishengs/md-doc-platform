@@ -6,7 +6,7 @@
   "scripts": {
     "build-prod": "webpack --progress --hide-modules --colors --config=build/webpack-prod.config.js",
     "build-dev": "webpack --progress --hide-modules --colors --config=build/webpack-dev.config.js",
-    "dev": "webpack-dev-server --inline --hot --colors --config=build/webpack-dev.config.js --port 8011"
+    "dev": "webpack-dev-server --inline --hot --colors --config=build/webpack-dev.config.js --port 8786"
   },
   "author": "Hisheng",
   "license": "MIT",
