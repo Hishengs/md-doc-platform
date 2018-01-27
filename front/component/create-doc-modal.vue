@@ -47,13 +47,22 @@
     methods: {
       create (){
         // 检查
+        if(!this.newDoc.title.trim() || !this.newDoc.name.trim() || !this.newDoc.gitUrl.trim() || !this.newDoc.creator.trim()){
+          return;
+        }
+        this.$Message.info('创建中...');
+        this.$Loading.start();
         this.newDoc.createdAt = new Date(); // 创建时间
         this.api.doc.create(this.newDoc).then(res => {
+          this.$Loading.finish();
           console.log('>>> 创建文档', res);
           if(res.data.err.level < 3){
             this.$Message.success('文档创建成功');
             this.show = false;
+            this.eventHub.$emit('createDocSuccess');
           }else this.$Message.error('创建失败：' + res.data.err.msg);
+        }).catch(err => {
+          this.$Loading.finish();
         });
       },
     },

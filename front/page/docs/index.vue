@@ -3,7 +3,7 @@
   <div id="doc-list">
     <Alert v-if="!docs.length">暂无文档，快去 <a href="javascript:;" class="link">创建</a> 一个吧～</Alert>
     <div v-else>
-      <div class="doc" v-for="doc,i in docs" @click.self="$router.push('/docs/doc/'+doc.name)">
+      <div class="doc" v-for="doc,i in docs" @click.self="openDoc(doc)">
         <h2 class="name">{{ doc.title }}</h2>
         <p class="description">{{ doc.description }}</p>
         <p class="creator"><b>{{ doc.creator }}</b> 于 {{ doc.createdAt }} 创建</p>
@@ -54,6 +54,11 @@
         currentEditDoc: null, // 当前编辑的文档
         showUpdateDocModal: false,
       };
+    },
+    created (){
+      this.eventHub.$on('createDocSuccess', () => {
+        this.getList();
+      });
     },
     activated (){
       this.getList();
@@ -107,6 +112,9 @@
           console.log('>>> [err] 从 git 更新文档', err);
         });
       },
+      openDoc (doc){
+        window.open(this.config.serverUrl + '/static/docs/' + doc.name + '/');
+      }
     }
   };
 </script>
