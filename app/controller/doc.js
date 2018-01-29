@@ -94,6 +94,20 @@ module.exports = (app) => {
         const docs = require(path.join(docsDir, 'docs.json'));
         const objIndex = findIndex(docs, { name: doc.name });
         if(objIndex !== -1){
+          const objDoc = docs[objIndex];
+          // 如果 git url 有变化
+          if(objDoc.gitUrl.trim() !== doc.gitUrl.trim()){
+            const { exec } = require('child_process');
+            await new Promise((resolve, reject) => {
+            exec(`git remote set-url origin ${doc.gitUrl.trim()}`, {
+                cwd: path.join(docsDir, objDoc.name)
+              }, (err, stdout, stderr) => {
+                if(err){
+                  reject(err.stack);
+                }else resolve();
+              });
+            });
+          }
           docs[objIndex] = doc;
           fs.writeFileSync(path.join(docsDir, 'docs.json'), JSON.stringify(docs, null, 2), { encode: 'utf-8' });
           this.ctx.done('更新成功');
