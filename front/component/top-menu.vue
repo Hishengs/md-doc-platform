@@ -23,10 +23,16 @@
       <p>建设这个网站的初衷主要是两个：</p>
       <li>1. 提供一个统一的、体验较好的文档聚合中心。</li>
       <li>2. 提供一个技术沉淀、产出平台。</li>
+      <h2>在这里，你可以</h2>
+      <li>1. 创建项目相关设计、接口文档。</li>
+      <li>2. 创建技术文档。</li>
+      <li>2. 创建个人博客文档。</li>
       <h2>使用指南</h2>
-      <li>一切以 markdown 为中心，可以使用 markdown 的地方就是用 markdown，不过多的编写大量的后台逻辑；</li>
-      <li>不管是项目（框架）文档，或者是博客，都通过 markdown 文件夹的方式组织，并本地存储。</li>
-      <div slot="footer"></div>
+      <li>通过 <b>BP-GIT</b>（10.86.168.3:8686） 创建文档项目。</li>
+      <li>点击右上角创建项目，将 GIT 创建的项目同步到这里来即可。</li>
+      <div slot="footer">
+        <Button type="primary" @click="showAboutModal=false">Got it</Button>
+      </div>
     </Modal>
     <!-- 创建文档弹窗 -->
     <create-doc-modal ref="createDocModal"></create-doc-modal>
@@ -87,6 +93,13 @@
     }
     .right {
       float: right;
+    }
+    .ivu-menu {
+      background-color: #333333;
+      color: #ffffff;
+      .ivu-menu-item {
+        color: #ffffff;
+      }
     }
     .ivu-menu-item-active.ivu-menu-item-selected {
       color: inherit;

@@ -3,5 +3,5 @@ import config from '../config.js';
 
 module.exports = {
   http: axios,
-  urlPrefix: config.serverUrl,
+  urlPrefix: (config.env === 'development' ? config.devUrl : config.serverUrl) + '/api',
 };

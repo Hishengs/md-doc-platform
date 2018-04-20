@@ -5,13 +5,13 @@
         <Input placeholder="文档标题" v-model="newDoc.title"></Input>
       </FormItem>
       <FormItem label="文档名称">
-        <Input placeholder="请输入文档 git 名称或文件夹名称" v-model="newDoc.name"></Input>
+        <Input placeholder="请输入文档 git 名称或文档项目文件夹名称，创建之后不允许修改" v-model="newDoc.name"></Input>
       </FormItem>
       <FormItem label="Git Url">
         <Input placeholder="请输入文档 git 地址" v-model="newDoc.gitUrl"></Input>
       </FormItem>
       <FormItem label="创建者">
-        <Input placeholder="创建者" v-model="newDoc.creator"></Input>
+        <Input placeholder="创建者，创建之后不允许修改" v-model="newDoc.creator"></Input>
       </FormItem>
       <FormItem label="简介">
         <Input placeholder="简介" type="textarea" :rows="5" v-model="newDoc.description"></Input>
@@ -44,6 +44,11 @@
         },
       };
     },
+    computed: {
+      category (){
+        return this.$route.query.category;
+      },
+    },
     methods: {
       create (){
         // 检查
@@ -53,7 +58,7 @@
         this.$Message.info('创建中...');
         this.$Loading.start();
         this.newDoc.createdAt = new Date(); // 创建时间
-        this.api.doc.create(this.newDoc).then(res => {
+        this.api.doc.create(this.newDoc, this.category).then(res => {
           this.$Loading.finish();
           console.log('>>> 创建文档', res);
           if(res.data.err.level < 3){

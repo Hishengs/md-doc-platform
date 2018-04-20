@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<top-menu></top-menu>
-		<left-menu></left-menu>
+		<top-menu v-if="logined"></top-menu>
+		<left-menu v-if="logined"></left-menu>
 		<div id="page">
 			<keep-alive>
 	      <router-view></router-view>
@@ -19,6 +19,11 @@
 			topMenu,
 			leftMenu,
 		},
+		computed: {
+			logined (){
+				return Boolean(localStorage.getItem('verified'));
+			},
+		},
 	}
 </script>
 
@@ -32,6 +37,7 @@
     position: relative;
     padding: 70px 10px 10px 160px;
     margin-bottom: -70px;
+		background-color: #f9f9f9;
     #top-menu {
     	position: absolute;
     	left: 0;

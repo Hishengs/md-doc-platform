@@ -7,7 +7,9 @@
 		body {
 			/*background-color: #434343;*/
 			/*color: #f3f3f3;*/
-			color: #434343;
+			background-image: url('/static/assets/code.png');
+			/* color: #434343; */
+			color: #ffffff;
 		}
 		.slogan, .enter, .powered-by  {
 			text-align: center;
@@ -22,7 +24,8 @@
 			margin-top: 40px;
 		}
 		.enter a {
-			border: 1px solid #434343;
+			/* border: 1px solid #434343; */
+			border: 1px solid #ffffff;
 			display: inline-block;
 			width: 100px;
 			height: 30px;
@@ -31,10 +34,12 @@
 			text-decoration: none;
 		}
 		.enter a:hover, .enter a:visited, .enter a:link, .enter a:active {
-			color: #434343;
+			/* color: #434343; */
+			color: #ffffff;
 		}
 		.enter a:hover, .enter a:active {
-			background-color: #f5f5f5;
+			/* background-color: #f5f5f5; */
+			opacity: 0.8;
 		}
 		.powered-by {
 			position: absolute;
@@ -42,7 +47,8 @@
 			left: 0;
 			right: 0;
 			margin-top: 10px;
-			color: #666;
+			/* color: #666; */
+			color: #f5f5f5;
 		}
 		.powered-by b {
 			cursor: pointer;
@@ -51,7 +57,7 @@
 </head>
 <body>
 	<h2 class="slogan animated bounce">BITPOWER 技术文档中心</h2>
-	<p class="enter animated swing"><a href="/manage" title="主页建设中">进入</a></p>
-	<p class="powered-by animated flash">powered by <b onclick="window.location.href='/static/docs/heysoo';" title="基于 Koa 的 Web 框架">Heysoo</b></p>
+	<p class="enter animated swing"><a href="/manage">进入</a></p>
+	<p class="powered-by animated flash">powered by <b onclick="javascript:;" title="基于 Koa 的 Web 框架">Heysoo</b></p>
 </body>
 </html>

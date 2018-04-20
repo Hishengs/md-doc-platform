@@ -1,18 +1,18 @@
 <template>
 	<div id="left-menu">
-		<Menu :active-name="$route.name" width="150px" @on-select="name => { $router.push({name: name}); }">
-      <MenuItem name="docs-index" class="docs-index">
+		<Menu :active-name="menu" width="150px" @on-select="onMenuSelect">
+      <MenuItem name="docs" class="docs-index">
         <Icon type="ios-folder"></Icon>
         文档中心
       </MenuItem>
       <!-- <MenuItem name="framework-and-library" class="framework-and-library">
         <Icon type="coffee" size="18"></Icon>
         框架与库
-      </MenuItem>
-      <MenuItem name="blog" class="blog">
+      </MenuItem> -->
+      <MenuItem name="blogs" class="blogs">
         <Icon type="social-wordpress" size="18"></Icon>
         博客
-      </MenuItem> -->
+      </MenuItem>
     </Menu>
 	</div>
 </template>
@@ -22,9 +22,15 @@
     name: 'left-menu',
     data (){
       return {
-        menu: 'doc'
+        menu: 'docs',
       };
-    }
+    },
+    methods: {
+      onMenuSelect (category){
+        this.menu = category;
+        this.$router.push(`/docs/index?category=${category}`);
+      },
+    },
   }
 </script>
 
@@ -32,7 +38,13 @@
   #left-menu {
     height: 100%;
     .ivu-menu {
+      box-shadow: 0 1px 10px 2px rgba(0,0,0,.1);
       height: 100%;
+      /* background-color: #232323;
+      color: #ffffff;
+      .ivu-menu-item {
+        color: #ffffff;
+      } */
     }
   }
 </style>

@@ -24,7 +24,11 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   console.log('>>> to, from', to, from);
   const verified = Boolean(localStorage.getItem('verified'));
-  if(!verified){
+  const lastLogin = Number(localStorage.getItem('last-login'));
+  const now = (new Date()).getTime();
+  const overTime = now - lastLogin;
+  // console.log('>>> lastLogin, now, overTime', lastLogin, now, overTime);
+  if(!verified || (overTime > 5*24*60*60*1000)){
   	if(to.path !== '/login'){
 	  	next('/login');
 	  }else next();

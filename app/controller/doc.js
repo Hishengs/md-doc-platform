@@ -1,7 +1,16 @@
 const fs = require('fs'), path = require('path');
-const docsDir = path.join(process.cwd(), '/app/static/docs');
+// const docsDir = path.join(process.cwd(), '/app/static/docs');
 const NodeGit = require('nodegit');
 const findIndex = require('lodash/findIndex');
+
+const docsDirMap = {
+  docs: path.join(process.cwd(), '/app/static/docs'),
+  blogs: path.join(process.cwd(), '/app/static/blogs'),
+};
+
+function getDocJSON(path){
+  return JSON.parse(fs.readFileSync(path));
+}
 
 module.exports = (app) => {
 
@@ -61,7 +70,8 @@ module.exports = (app) => {
           return;
         }
         // 获取已存在的文档记录
-        const docs = require(path.join(docsDir, 'docs.json'));
+        const docsDir = docsDirMap[this.ctx.request.query.category || 'docs'];
+        const docs = getDocJSON(path.join(docsDir, 'docs.json'));
         const objIndex = findIndex(docs, { name: doc.name });
         if(objIndex === -1){
           // 尝试 clone 文档仓库
@@ -78,7 +88,8 @@ module.exports = (app) => {
 
     // 获取所有文档
     async getDocs (){
-      const docs = require(path.join(docsDir, 'docs.json'));
+      const docsDir = docsDirMap[this.ctx.request.query.category || 'docs'];
+      const docs = JSON.parse(fs.readFileSync(path.join(docsDir, 'docs.json')));
       this.ctx.done(docs);
     }
 
@@ -91,7 +102,8 @@ module.exports = (app) => {
           return;
         }
         // 添加到记录文件
-        const docs = require(path.join(docsDir, 'docs.json'));
+        const docsDir = docsDirMap[this.ctx.request.query.category || 'docs'];
+        const docs = getDocJSON(path.join(docsDir, 'docs.json'));
         const objIndex = findIndex(docs, { name: doc.name });
         if(objIndex !== -1){
           const objDoc = docs[objIndex];
@@ -128,7 +140,8 @@ module.exports = (app) => {
           return;
         }
         // 添加到记录文件
-        const docs = require(path.join(docsDir, 'docs.json'));
+        const docsDir = docsDirMap[this.ctx.request.query.category || 'docs'];
+        const docs = getDocJSON(path.join(docsDir, 'docs.json'));
         const objIndex = findIndex(docs, { name: doc.name });
         if(objIndex !== -1){
           const objDoc = docs[objIndex];
