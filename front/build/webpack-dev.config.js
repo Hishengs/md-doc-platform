@@ -38,11 +38,10 @@ module.exports = {
   plugins: base.plugins,
   devServer:{
     inline: true,
-    proxy: {
-      '/api/*': {
-        target: 'http://localhost:8787',
-        secure: false
-      }
-    }
+    proxy: [{
+      context: ['/api/*', '/static/*'],
+      target: 'http://localhost:8787',
+      secure: false,
+    }]
   }
 };

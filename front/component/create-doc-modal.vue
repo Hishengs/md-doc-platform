@@ -1,6 +1,11 @@
 <template>
   <Modal id="create-doc-modal" title="创建文档" v-model="show">
     <Form>
+      <FormItem label="归类到">
+        <Select v-model="category">
+          <Option v-for="category in categories" :value="category.key" :key="category.key">{{ category.name }}</Option>
+        </Select>
+      </FormItem>
       <FormItem label="文档标题">
         <Input placeholder="文档标题" v-model="newDoc.title"></Input>
       </FormItem>
@@ -34,6 +39,11 @@
       return {
         show: false,
         // 新建的文档
+        category: 'docs',
+        categories: [
+          { name: '文档中心', key: 'docs' },
+          { name: '博客', key: 'blogs' },
+        ],
         newDoc: {
           title: '',
           name: '',
@@ -43,11 +53,6 @@
           // cover: '',
         },
       };
-    },
-    computed: {
-      category (){
-        return this.$route.query.category;
-      },
     },
     methods: {
       create (){

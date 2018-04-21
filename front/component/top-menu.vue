@@ -5,9 +5,15 @@
         <Icon type="social-github" size="20"></Icon>
         BITPOWER 互联网技术开放与共享平台
       </MenuItem>
+      <MenuItem name="logout" class="logout right">
+        注销
+      </MenuItem>
       <MenuItem name="about" class="about right">
         <Icon type="help-circled"></Icon>
         关于
+      </MenuItem>
+      <MenuItem name="create-doc-guide" class="create-doc-guide right">
+        创建指南
       </MenuItem>
       <MenuItem name="create-doc" class="create-doc right">
         <Icon type="plus-round"></Icon>
@@ -30,21 +36,27 @@
       <h2>使用指南</h2>
       <li>通过 <b>BP-GIT</b>（10.86.168.3:8686） 创建文档项目。</li>
       <li>点击右上角创建项目，将 GIT 创建的项目同步到这里来即可。</li>
+      <h2>设计/维护者</h2>
+      <p>Hisheng (haisheng.z@bitpower.com.cn)</p>
       <div slot="footer">
         <Button type="primary" @click="showAboutModal=false">Got it</Button>
       </div>
     </Modal>
     <!-- 创建文档弹窗 -->
     <create-doc-modal ref="createDocModal"></create-doc-modal>
+    <!-- 创建文档指南 -->
+    <create-doc-guide ref="createDocGuide"></create-doc-guide>
 	</div>
 </template>
 
 <script>
   import createDocModal from './create-doc-modal.vue';
+  import createDocGuide from './create-doc-guide.vue';
   export default {
     name: 'top-menu',
     components: {
       createDocModal,
+      createDocGuide,
     },
     data (){
       return {
@@ -65,8 +77,14 @@
           this.showAboutModal = true;
         }else if(name === 'create-doc'){
           this.$refs.createDocModal.show = true;
+        }else if(name === 'create-doc-guide'){
+          this.$refs.createDocGuide.show = true;
         }else if(name === 'back'){
           this.$router.go (-1);
+        }else if(name === 'logout'){
+          localStorage.removeItem('verified');
+          localStorage.removeItem('last-login');
+          window.location.reload();
         }
       },
     }
