@@ -153,6 +153,8 @@
       vertical-align: top;
       position: relative;
       background-color: #ffffff;
+      z-index: 10;
+      /* opacity: .93; */
       box-shadow: 0 1px 10px 2px rgba(0,0,0,.1);
       /*color: #ffffff;*/
       &:hover {

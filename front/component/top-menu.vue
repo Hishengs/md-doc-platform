@@ -3,7 +3,7 @@
 		<Menu mode="horizontal" @on-select="onMenuSelect">
       <MenuItem name="site-name" class="site-name">
         <Icon type="social-github" size="20"></Icon>
-        BITPOWER 互联网技术开放与共享平台
+        {{ config.siteName }}
       </MenuItem>
       <MenuItem name="logout" class="logout right">
         注销
@@ -115,6 +115,7 @@
     .ivu-menu {
       background-color: #333333;
       color: #ffffff;
+      /* opacity: .86; */
       .ivu-menu-item {
         color: #ffffff;
       }

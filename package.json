@@ -16,7 +16,7 @@
     "express": "^4.16.2",
     "heysoo": "0.0.5",
     "moment": "^2.20.1",
-    "nodegit": "^0.20.3",
+    "nodegit": "^0.22.0",
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {

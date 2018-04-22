@@ -1072,9 +1072,9 @@ fresh@0.5.2, fresh@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
-fs-extra@~0.26.2:
-  version "0.26.7"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.26.7.tgz#9ae1fdd94897798edab76d0918cf42d0c3184fa9"
+fs-extra@~0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.27.0.tgz#66d4c25d1d2c6a8dafed7718cfcffe930f13b2c0"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -1702,7 +1702,7 @@ mz@^2.3.1:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nan@^2.2.0, nan@^2.3.0:
+nan@^2.10.0, nan@^2.3.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
@@ -1710,7 +1710,7 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-node-gyp@^3.5.0:
+node-gyp@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"
   dependencies:
@@ -1728,7 +1728,7 @@ node-gyp@^3.5.0:
     tar "^2.0.0"
     which "1"
 
-node-pre-gyp@^0.6.39, node-pre-gyp@~0.6.32:
+node-pre-gyp@^0.6.39, node-pre-gyp@~0.6.39:
   version "0.6.39"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.39.tgz#c00e96860b23c0e1420ac7befc5044e1d78d8649"
   dependencies:
@@ -1758,15 +1758,15 @@ nodegit-promise@~4.0.0:
   dependencies:
     asap "~2.0.3"
 
-nodegit@^0.20.3:
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/nodegit/-/nodegit-0.20.3.tgz#a44172db08c833cdcb1ab9bbc2c832ce05898815"
+nodegit@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/nodegit/-/nodegit-0.22.0.tgz#3b49f732f6c19091f05563f2cd7307871ee1973c"
   dependencies:
-    fs-extra "~0.26.2"
+    fs-extra "~0.27.0"
     lodash "^4.13.1"
-    nan "^2.2.0"
-    node-gyp "^3.5.0"
-    node-pre-gyp "~0.6.32"
+    nan "^2.10.0"
+    node-gyp "^3.6.2"
+    node-pre-gyp "~0.6.39"
     promisify-node "~0.3.0"
 
 "nopt@2 || 3":

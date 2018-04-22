@@ -40,6 +40,7 @@
     .ivu-menu {
       box-shadow: 0 1px 10px 2px rgba(0,0,0,.1);
       height: 100%;
+      /* opacity: .93; */
       /* background-color: #232323;
       color: #ffffff;
       .ivu-menu-item {

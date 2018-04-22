@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" :style="style">
 		<top-menu v-if="logined"></top-menu>
 		<left-menu v-if="logined"></left-menu>
 		<div id="page">
@@ -7,6 +7,7 @@
 	      <router-view></router-view>
 	    </keep-alive>
 		</div>
+		<!-- <div id="particles-js"></div> -->
 	</div>
 </template>
 
@@ -23,6 +24,13 @@
 			logined (){
 				return Boolean(localStorage.getItem('verified'));
 			},
+			style (){
+				// const showBg = (new Date().getTime()) % 2 === 0;
+				// return showBg ? {
+				// 	backgroundImage: 'url("http://localhost:8787/static/assets/vteam.png")',
+				// } : {};
+				return {};
+			},
 		},
 	}
 </script>
@@ -33,6 +41,7 @@
 		height: 100%;
 	}
   #app {
+		/* background-image: url("http://localhost:8787/static/assets/vteam.png"); */
   	height: 100%;
     position: relative;
     padding: 70px 10px 10px 160px;
@@ -53,6 +62,20 @@
     }
     #page {
     	height: 100%;
+			background-color: transparent;
     }
+		#particles-js {
+			/* z-index: -1; */
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #1d1d1d;
+			background-image: url("");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
   }
 </style>
